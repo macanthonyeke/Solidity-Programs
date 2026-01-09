@@ -55,9 +55,9 @@ contract StakingVault is ReentrancyGuard, Pausable, Ownable {
         emit Staked (msg.sender, _amount);
     }
 
-    receive () external payable {
-        revert ("use stake()");
-    }
+    // receive () external payable {
+    //     revert ("use stake()");
+    // }
 
     function calculateReward (address _user, uint _index) public view returns (uint) {
         StakeInfo memory s = stakes[_user][_index];
